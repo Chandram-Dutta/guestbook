@@ -48,7 +48,7 @@
 	}
 </script>
 
-<div class="flex flex-col max-h-screen">
+<div class="flex flex-col h-screen">
 	<div class="w-full p-4 flex flex-row items-center bg-fuchsia-900 text-fuschia-100 shadow-md">
 		<BookHeart />
 		<h1 class="text-2xl m-2">Guestbook</h1>
