@@ -8,7 +8,6 @@
 	let message = '';
 	let messages: Message[] = [];
 	let element: HTMLElement;
-	let inputElement: HTMLInputElement;
 
 	onMount(() => {
 		getPosts();
@@ -47,13 +46,9 @@
 		await tick();
 		scrollToBottom(element);
 	}
-
-	function handleFocus() {
-		inputElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-	}
 </script>
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col max-h-screen">
 	<div class="w-full p-4 flex flex-row items-center bg-fuchsia-900 text-fuschia-100 shadow-md">
 		<BookHeart />
 		<h1 class="text-2xl m-2">Guestbook</h1>
@@ -70,11 +65,9 @@
 
 	<div class="w-full p-4 flex flex-row items-center bg-fuchsia-900 text-fuschia-100 shadow-md">
 		<input
-			bind:this={inputElement}
 			class="flex-1 p-4 bg-fuchsia-100 text-fuchsia-950 rounded-lg"
 			type="text"
 			bind:value={message}
-			on:focus={handleFocus}
 		/>
 		<Button.Root
 			class="transition active:scale-95 hover:bg-fuchsia-100/95 ml-4 p-4 rounded-full bg-fuchsia-100 text-fuchsia-950"
